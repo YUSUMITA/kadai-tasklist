@@ -29,9 +29,9 @@ class TasksController < ApplicationController
     end
     
     def update
-        @task = Task.new(task_params)
+        @task = Task.find(params[:id])
         
-        if @task.save
+        if @task.update(task_params)
             flash[:success] = "タスク内容は正常に更新されました"
             redirect_to task_path(@task)
         else
