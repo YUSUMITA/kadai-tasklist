@@ -2,13 +2,15 @@
 
 <table>
     <tr>
-        <th>ID</th>
+        <th>id</th>
         <th>タスクの内容</th>
+        <th>ステータス</th>
     </tr>
     <% @tasks.each do |task| %>
     <tr>
         <td><%= link_to task.id, task_path(task) %></td>
         <td><%= task.content %></td>
+        <td><%= task.status %></td>
     </tr>
     <% end %>
 </table>

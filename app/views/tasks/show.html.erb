@@ -4,12 +4,14 @@
     <tr>
         <th>id</th>
         <th>タスク内容</th>
+        <th>ステータス</th>
         <th>書き込み日時</th>
         <th>編集日時</th>
     </tr>
     <tr>
         <td><%= @task.id %></td>
         <td><%= @task.content %></td>
+        <td><%= @task.status %></td>
         <td><%= @task.created_at %></td>
         <td><%= @task.updated_at %></td>
     </tr>
