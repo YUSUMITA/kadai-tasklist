@@ -1,0 +1,40 @@
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+        <li>
+            <%= msg %>
+        </li>
+    <% end %>
+<% end %>
+    
+<h1>Sign up</h1>
+
+<div>
+    <%= form_with(model: @user, local: true) do |f| %>
+    
+        <div>
+            <%= f.label :name, "Name" %>
+            <%= f.text_field :name %>
+        </div>
+
+        <div>
+            <%= f.label :email, "Email" %>
+            <%= f.email_field :email %>
+        </div>
+        
+        <div>
+            <%= f.label :password, "Password" %>
+            <%= f.password_field :password %>
+        </div>
+        
+        <div>
+            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.password_field :password_confirmation %>
+        </div>
+        
+        <%= f.submit "Sign up" %>
+        
+    <% end %>
+
+    <p>Already signed up?? <%= link_to "Log in now!", login_path %></p>
+    
+</div>
